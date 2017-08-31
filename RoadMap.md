@@ -21,7 +21,7 @@ third
 
 Edit the tables, after that 
 > run bin\cake migrations migrate
-Now you have the database
+> Now you have the database
 
 ---
 Forth
@@ -43,4 +43,17 @@ fifth thing to do
 > ativate the layout
 > run this on console bin\cake twitter_bootstrap.publish all
 > now we have the layout files at src\template\element
-> un bin\cake bake all NOMETATABELA --theme TwitterBootstrap
+> un bin\cake bake all NOMEDATABELA --theme TwitterBootstrap
+
+---
+sixth
+---
+
+> create the seeds
+> run bin\cake bake seed NOMEDATABELA
+
+---
+seventh
+---
+
+> personalize the seeds 
