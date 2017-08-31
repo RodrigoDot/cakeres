@@ -53,8 +53,8 @@ class AppController extends Controller
         
         //  MINHAS MODIFICACOES
         
-        $this->viewBuilder->theme('TwitterBootstrap');
-        $this->viewBuilder->layout('adminlte');
+        $this->viewBuilder()->theme('TwitterBootstrap');
+        $this->viewBuilder()->layout('adminlte');
         
         // FIM MINHAS MODIFICACOES
     }
