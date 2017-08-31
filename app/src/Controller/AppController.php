@@ -50,6 +50,13 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
+        
+        //  MINHAS MODIFICACOES
+        
+        $this->viewBuilder->theme('TwitterBootstrap');
+        $this->viewBuilder->layout('adminlte');
+        
+        // FIM MINHAS MODIFICACOES
     }
 
     /**
