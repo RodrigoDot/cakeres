@@ -17,3 +17,7 @@ class AppController extends Controller
     }
     
 }
+
+
+
+Instalando e configurando o pacote de CRUDs 
