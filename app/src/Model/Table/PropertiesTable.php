@@ -41,7 +41,7 @@ class PropertiesTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Types', [
+        $this->belongsTo('PropertiesTypes', [
             'foreignKey' => 'type_id',
             'joinType' => 'INNER'
         ]);

@@ -21,7 +21,7 @@ class PropertiesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Districts']
+            'contain' => ['PropertiesTypes', 'Districts']
         ];
         $properties = $this->paginate($this->Properties);
 

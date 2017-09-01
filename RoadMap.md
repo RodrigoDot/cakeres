@@ -59,7 +59,14 @@ seventh
 > personalize the seeds 
 > after you have your seed up with data
 > run bin\cake migrations seed
-> now you have your data in your database
+> now you have your test data in your database
+
+---
+eighth
+---
+
+> create your API
+> 
 
 
 
