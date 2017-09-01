@@ -12,7 +12,8 @@ class UsersController extends AppController // o controller extende o appControl
         $this->set('_serialize', ['users']);       // formata os dados para JSON
         
     }
- 
+    
+    
     
     
 }

@@ -87,11 +87,37 @@ tenth
 > or
 > go to src/config/bootstrap.php and add Plugin::load('NOMEDOPLUGIN'); at the end of the file
 
+---
+eleventh
+---
 
+> integrate the new plugin to your API
+> go to src/controller/api/v1/appcontroller inside the initialize() add $this->loadComponent('Crud.Crud', [
+    'action' => [       // controllers que utilizarao o plugin
+        'Crud.index'  
+    ],
+    'listeners' => [ 
+        'Crud.Api',             // carregamento da api
+        'Crud.ApiPagination',   // componente da api para paginar os dados
+        'Crud.ApiQueryLog',     //    
+        'Crud.ApiSearch'        //
+    ]  
+]);
+> you have to include your controllers folowing the above template
 
+---
+twoelveth
+---
 
+> now you can use the plugin resources on the controllers of your class
+> first you have to declare the plugin inside the class of your conotroller
+> on your controller add use \Crud\Controller\ControllerTrait;
 
+class ExampleController extends AppController {
+    use \Crud\Controller\ControllerTrait; 
+} 
 
+> now you can access all the methods from the Crud plugin
 
 
 

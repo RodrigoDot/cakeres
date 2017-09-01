@@ -13,11 +13,22 @@ class AppController extends Controller
         parent::initialize();
         
         $this->loadComponent('RequestHandler');
+        $this->loadComponent('Crud.Crud', [
+            'actions' => [       // controllers que utilizarao o plugin
+                'Crud.Index',  
+                'Crud.View',  
+                'Crud.Add',  
+                'Crud.Edit',  
+                'Crud.Delete'  
+            ],
+            'listeners' => [ 
+                'Crud.Api',             // carregamento da api
+                'Crud.ApiPagination',   // componente da api para paginar os dados
+                'Crud.ApiQueryLog'     //    
+                //'Crud.ApiSearch'        //
+    ]  
+]);
  
     }
     
 }
-
-
-
-Instalando e configurando o pacote de CRUDs 
