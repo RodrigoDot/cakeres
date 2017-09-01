@@ -7,7 +7,7 @@ class DistrictsController extends AppController // o controller extende o appCon
 
     public function index() {
         
-        $districts = $this->Districts->find()->all();  // busca os dados no banco
+        $districts = $this->Districts->find()->all();  // busca os dados no banco   /this/model/metodo/parametro
         $this->set('districts', $districts);          // manda os dados para a view
         $this->set('_serialize', ['districts']);       // formata os dados para JSON
         

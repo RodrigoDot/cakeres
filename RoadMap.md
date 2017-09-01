@@ -69,6 +69,20 @@ eighth
 > after create your controllers, you must create the routes to access them
 > go to config/routes.php and add the routes that you need
 
+---
+ninth
+---
+
+> now you can develop your views and that`s it
+
+
+---
+tenth
+---
+
+> how to install a CRUD package from outside
+> example > composer require friendsofcake/crud
+
 
 
 
