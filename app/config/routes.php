@@ -77,10 +77,12 @@ Router::scope('/', function (RouteBuilder $routes) {
 
 // ROTAS PERSONALIZADAS DA API 
 
-Router::prefix('api/v1', function(RouteBuilder $routes) {
+Router::prefix('api/v1', function(RouteBuilder $routes) { //define o prefixo da url
     
-    $routes->extensions(['json']);
-    $routes->resources('properties');
+    $routes->extensions(['json']);          // habilita requisicoes json
+    $routes->resources('properties');       // habilita requisicoes vindas do controller properties
+    $routes->resources('districts');       // habilita requisicoes vindas do controller districts
+    $routes->resources('users');       // habilita requisicoes vindas do controller users
     
 });
 
