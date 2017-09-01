@@ -20,21 +20,21 @@ class PropertiesSeed extends AbstractSeed
     {
         $data = [
             [
-                'title' => 'casa 1',
+                'title' => 'casa 1 - mansao',
                 'description' => 'casa azul',
                 'value' => '1000.00',
                 'type_id' => 1,
                 'district_id' => 2
             ],
             [
-                'title' => 'casa 2',
+                'title' => 'casa 2 - barraco',
                 'description' => 'casa vermelha',
                 'value' => '2000.00',
                 'type_id' => 2,
                 'district_id' => 1
             ],
             [
-                'title' => 'casa 3',
+                'title' => 'casa 3 - edificio',
                 'description' => 'casa amarela',
                 'value' => '3000.00',
                 'type_id' => 1,

@@ -24,11 +24,10 @@ class AppController extends Controller
             'listeners' => [ 
                 'Crud.Api',             // carregamento da api
                 'Crud.ApiPagination',   // componente da api para paginar os dados
-                'Crud.ApiQueryLog'     //    
-                //'Crud.ApiSearch'        //
-    ]  
-]);
- 
+                'Crud.ApiQueryLog',     //    
+                'Crud.Search'        //
+                ]  
+            ]);
     }
     
 }

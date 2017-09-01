@@ -24,7 +24,7 @@ Edit the tables, after that
 > Now you have the database
 
 ---
-Forth
+4th
 ---
 
 Import a theme
@@ -37,7 +37,7 @@ Import a theme
 
 
 ---
-fifth thing to do 
+5th thing to do 
 ---
 
 > ativate the layout
@@ -46,14 +46,14 @@ fifth thing to do
 > un bin\cake bake all NOMEDATABELA --theme TwitterBootstrap
 
 ---
-sixth
+6th
 ---
 
 > create the seeds
 > run bin\cake bake seed NOMEDATABELA
 
 ---
-seventh
+8th
 ---
 
 > personalize the seeds 
@@ -62,7 +62,7 @@ seventh
 > now you have your test data in your database
 
 ---
-eighth
+8th
 ---
 
 > create your API
@@ -70,14 +70,14 @@ eighth
 > go to config/routes.php and add the routes that you need
 
 ---
-ninth
+9th
 ---
 
 > now you can develop your views and that`s it
 
 
 ---
-tenth
+10th
 ---
 
 > how to install a CRUD package from outside
@@ -88,7 +88,7 @@ tenth
 > go to src/config/bootstrap.php and add Plugin::load('NOMEDOPLUGIN'); at the end of the file
 
 ---
-eleventh
+11th
 ---
 
 > integrate the new plugin to your API
@@ -100,13 +100,13 @@ eleventh
         'Crud.Api',             // carregamento da api
         'Crud.ApiPagination',   // componente da api para paginar os dados
         'Crud.ApiQueryLog',     // componente para debug nos eventos do banco   
-        'Crud.ApiSearch'        // esse componente soh funciona apos integrar outro plugin
+        'Crud.Search'        // esse componente soh funciona apos integrar outro plugin
     ]  
 ]);
 > you have to include your controllers folowing the template above 
 
 ---
-twoelveth
+12th
 ---
 
 > now you can use the plugin resources on the controllers of your class
@@ -128,6 +128,23 @@ class ExampleController extends AppController {
 > after download the plugin
 > run bin\cake plugin load Search
 > now you can use the search component 
+> to activate it you must go to src/model/YOURMODEL
+> and add $this->addBehavior('Search.Search'); in the initialize method
+
+> configurate the search plugin
+> go to src/model/YOURMODEL and add
+> $this->searchManager()
+    ->add('search', 'Search.Like', [ //o primeiro parametro SEARCH pode ser nomeado como quiser e eh usado na url
+        'before' => true,
+        'after' => true,
+        'fieldMode' => 'OR',
+        'comparisan' => 'like',
+        'wildcardAny' => '*',
+        'wildcardOne' => '?',
+        'field' => [
+            'title'
+        ]
+    ]);
 
 
 
