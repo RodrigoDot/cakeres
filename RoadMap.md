@@ -82,7 +82,10 @@ tenth
 
 > how to install a CRUD package from outside
 > example > composer require friendsofcake/crud
-
+> to load the plugin o can 
+> run bin\cake plugin load NOMEDOPLUGIN 
+> or
+> go to src/config/bootstrap.php and add Plugin::load('NOMEDOPLUGIN'); at the end of the file
 
 
 
