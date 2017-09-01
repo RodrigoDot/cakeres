@@ -217,3 +217,5 @@ if (Configure::read('debug')) {
 }
 Plugin::load('TwitterBootstrap');
 Plugin::load('Crud');
+
+Plugin::load('search');

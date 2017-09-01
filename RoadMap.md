@@ -99,11 +99,11 @@ eleventh
     'listeners' => [ 
         'Crud.Api',             // carregamento da api
         'Crud.ApiPagination',   // componente da api para paginar os dados
-        'Crud.ApiQueryLog',     //    
-        'Crud.ApiSearch'        //
+        'Crud.ApiQueryLog',     // componente para debug nos eventos do banco   
+        'Crud.ApiSearch'        // esse componente soh funciona apos integrar outro plugin
     ]  
 ]);
-> you have to include your controllers folowing the above template
+> you have to include your controllers folowing the template above 
 
 ---
 twoelveth
@@ -118,6 +118,16 @@ class ExampleController extends AppController {
 } 
 
 > now you can access all the methods from the Crud plugin
+
+---
+13th
+---
+
+> to activate the component SEARCH of the Crud plugin you need import another plugin
+> run composer require friendsofcake/search
+> after download the plugin
+> run bin\cake plugin load Search
+> now you can use the search component 
 
 
 
