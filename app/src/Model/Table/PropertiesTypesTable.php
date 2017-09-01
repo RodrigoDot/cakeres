@@ -35,6 +35,19 @@ class PropertiesTypesTable extends Table
         $this->setTable('properties_types');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
+        
+        $this->addBehavior('Search.Search');
+        
+        $this->searchManager()
+            ->add('search', 'Search.Like', [
+                'before' => true,
+                'after' => true,
+                'fieldMode' => 'OR',
+                'comparation' => 'like',
+                'wildcardAny' => '*',
+                'wildcardOne' => '?',
+                'field' => ['title']
+            ]);
 
         $this->addBehavior('Timestamp');
     }

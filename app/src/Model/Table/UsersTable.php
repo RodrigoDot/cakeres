@@ -35,6 +35,22 @@ class UsersTable extends Table
         $this->setTable('users');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+        
+        $this->addBehavior('Search.Search');
+        
+        $this->searchManager()
+            ->add('search', 'Search.Like', [
+                'before' => true,
+                'after' => true,
+                'fieldMode' => 'OR',
+                'comparation' => 'like',
+                'wildcardAny' => '*',
+                'wildcardOne' => '?',
+                'field' => [
+                    'username', 
+                    'email'
+                ]
+            ]);
 
         $this->addBehavior('Timestamp');
     }

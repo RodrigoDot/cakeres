@@ -37,6 +37,19 @@ class DistrictsTable extends Table
         $this->setTable('districts');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
+        
+        $this->addBehavior('Search.Search');
+        
+        $this->searchManager()
+            ->add('search', 'Search.Like', [
+                'before' => true,
+                'after' => true,
+                'fieldMode' => 'OR',
+                'comparisan' => 'like',
+                'wildcardAny' => '*',
+                'wildcardOne' => '?',
+                'field' => ['title']
+            ]);
 
         $this->addBehavior('Timestamp');
 
