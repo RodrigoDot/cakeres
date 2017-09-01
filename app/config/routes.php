@@ -75,6 +75,17 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->fallbacks(DashedRoute::class);
 });
 
+// ROTAS PERSONALIZADAS DA API 
+
+Router::prefix('api/v1', function(RouteBuilder $routes) {
+    
+    $routes->extensions(['json']);
+    $routes->resources('properties');
+    
+});
+
+// FIM DAS ROTAS PERSONALIZADAS DA API
+
 /**
  * Load all plugin routes. See the Plugin documentation on
  * how to customize the loading of plugin routes.

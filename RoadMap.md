@@ -66,7 +66,8 @@ eighth
 ---
 
 > create your API
-> 
+> after create your controllers, you must create the routes to access them
+> go to config/routes.php and add the routes that you need
 
 
 
