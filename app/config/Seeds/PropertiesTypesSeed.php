@@ -18,10 +18,18 @@ class PropertiesTypesSeed extends AbstractSeed
      */
     public function run()
     {
-        $data = [];
+        $data = [
+            [
+                'id' => 1,
+                'title' => 'aluguel'
+            ],
+            [
+                'id' => 2,
+                'title' => 'venda'
+            ]
+        ];
 
         $table = $this->table('properties_types');
         $table->insert($data)->save();
     }
 }
- 

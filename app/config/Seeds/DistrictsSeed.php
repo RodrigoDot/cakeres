@@ -18,10 +18,22 @@ class DistrictsSeed extends AbstractSeed
      */
     public function run()
     {
-        $data = [];
+        $data = [
+            [
+                'id' => 1,
+                'title' => 'pedreira'
+            ],
+            [
+                'id' => 2,
+                'title' => 'barreira'
+            ],
+            [
+                'id' => 3,
+                'title' => 'enseada'
+            ]
+        ];
 
         $table = $this->table('districts');
         $table->insert($data)->save();
     }
 }
- 

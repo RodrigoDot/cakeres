@@ -18,10 +18,31 @@ class PropertiesSeed extends AbstractSeed
      */
     public function run()
     {
-        $data = [];
+        $data = [
+            [
+                'title' => 'casa 1',
+                'description' => 'casa azul',
+                'value' => '1000.00',
+                'type_id' => 1,
+                'district_id' => 2
+            ],
+            [
+                'title' => 'casa 2',
+                'description' => 'casa vermelha',
+                'value' => '2000.00',
+                'type_id' => 2,
+                'district_id' => 1
+            ],
+            [
+                'title' => 'casa 3',
+                'description' => 'casa amarela',
+                'value' => '3000.00',
+                'type_id' => 1,
+                'district_id' => 3
+            ]
+        ];
 
         $table = $this->table('properties');
         $table->insert($data)->save();
     }
 }
- 
