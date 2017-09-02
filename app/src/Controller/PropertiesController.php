@@ -39,7 +39,7 @@ class PropertiesController extends AppController
     public function view($id = null)
     {
         $property = $this->Properties->get($id, [
-            'contain' => ['Types', 'Districts']
+            'contain' => ['PropertiesTypes', 'Districts']
         ]);
 
         $this->set('property', $property);
@@ -63,9 +63,9 @@ class PropertiesController extends AppController
             }
             $this->Flash->error(__('The property could not be saved. Please, try again.'));
         }
-        $types = $this->Properties->Types->find('list', ['limit' => 200]);
+        $propertiestypes = $this->Properties->$propertiestypes->find('list', ['limit' => 200]);
         $districts = $this->Properties->Districts->find('list', ['limit' => 200]);
-        $this->set(compact('property', 'types', 'districts'));
+        $this->set(compact('property', 'propertiestypes', 'districts'));
         $this->set('_serialize', ['property']);
     }
 
@@ -92,7 +92,7 @@ class PropertiesController extends AppController
         }
         $types = $this->Properties->Types->find('list', ['limit' => 200]);
         $districts = $this->Properties->Districts->find('list', ['limit' => 200]);
-        $this->set(compact('property', 'types', 'districts'));
+        $this->set(compact('property', 'propertiestypes', 'districts'));
         $this->set('_serialize', ['property']);
     }
 

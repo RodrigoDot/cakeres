@@ -80,9 +80,10 @@ Router::scope('/', function (RouteBuilder $routes) {
 Router::prefix('api/v1', function(RouteBuilder $routes) { //define o prefixo da url
     
     $routes->extensions(['json']);          // habilita requisicoes json
-    $routes->resources('properties');       // habilita requisicoes vindas do controller properties
-    $routes->resources('districts');       // habilita requisicoes vindas do controller districts
-    $routes->resources('users');       // habilita requisicoes vindas do controller users
+    $routes->resources('Properties');       // habilita requisicoes vindas do controller properties
+    $routes->resources('PropertiesTypes');       // habilita requisicoes vindas do controller properties
+    $routes->resources('Districts');       // habilita requisicoes vindas do controller districts
+    $routes->resources('Users');       // habilita requisicoes vindas do controller users
     
 });
 

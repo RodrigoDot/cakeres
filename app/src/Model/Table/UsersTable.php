@@ -47,8 +47,8 @@ class UsersTable extends Table
                 'wildcardAny' => '*',
                 'wildcardOne' => '?',
                 'field' => [
-                    'username', 
-                    'email'
+                    'username',
+                    'password'
                 ]
             ]);
 
