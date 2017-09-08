@@ -13,7 +13,8 @@
         "josegonzalez/dotenv": "2.*",
         "cakephp-brasil/twitter-bootstrap": "dev-master",
         "friendsofcake/crud": "^5.2",
-        "friendsofcake/search": "^4.0"
+        "friendsofcake/search": "^4.0",
+        "neomerx/json-api": "^1.0"
     },
     "require-dev": {
         "psy/psysh": "@stable",

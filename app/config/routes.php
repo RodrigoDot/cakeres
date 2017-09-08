@@ -85,6 +85,7 @@ Router::prefix('api/v1', function(RouteBuilder $routes) { //define o prefixo da 
     $routes->resources('Districts');       // habilita requisicoes vindas do controller districts
     $routes->resources('Users');       // habilita requisicoes vindas do controller users
     
+    $routes->fallbacks(DashedRoute::class);
 });
 
 // FIM DAS ROTAS PERSONALIZADAS DA API
