@@ -207,7 +207,9 @@ $this->loadComponent('Auth', [
 ##configurate the new routes
 - go to ``src/config/routes.php``
 - add the routes that you need
-
+- to make requests you will have to pass on the header
+    -  key = action, value = application/vnd.api+json
+    -  key = Content-Type, value = application/vnd.api+json
 
 
 

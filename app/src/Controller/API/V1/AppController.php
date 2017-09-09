@@ -22,7 +22,7 @@ class AppController extends Controller
                 'Crud.Delete'  
             ],
             'listeners' => [ 
-                'CrudJsonApi.JsonApi',             // carregamento da api
+                'Crud.Api',             // carregamento da api
                 'CrudJsonApi.Pagination',   // componente da api para paginar os dados
                 'Crud.ApiQueryLog',     //    
                 'Crud.Search'        //
@@ -33,7 +33,7 @@ class AppController extends Controller
             'storage' => 'Memory',      //armazena os dados em memoria ja que api nao tem sessao 
             'authenticate' => [         //valida os campos passados pelo form
                 'Form' => [
-                    'scope' => ['Users.active' => 1],
+                    'scope' => ['Users.active' => 1]
                 ],
                 'ADmad/JwtAuth.Jwt' => [                //configuracoes da api jwt
                     'parameter' => 'token',
