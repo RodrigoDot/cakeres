@@ -15,7 +15,8 @@
         "friendsofcake/crud": "^5.2",
         "friendsofcake/search": "^4.0",
         "neomerx/json-api": "^1.0",
-        "friendsofcake/crud-json-api": "^0.0.1"
+        "friendsofcake/crud-json-api": "^0.0.1",
+        "admad/cakephp-jwt-auth": "^2.2"
     },
     "require-dev": {
         "psy/psysh": "@stable",

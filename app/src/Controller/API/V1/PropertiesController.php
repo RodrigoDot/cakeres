@@ -7,4 +7,17 @@ class PropertiesController extends AppController // o controller extende o appCo
 
     use \Crud\Controller\ControllerTrait;    
     
+    public function view($id = null)
+    {
+        $this->Crud->on('beforeFind', function(\Cake\Event\Event $event) {
+            $event->subject()->query->contain([
+                'PropertiesTypes',
+                'Districts'
+            ]);
+        });
+        
+        return $this->Crud->execute();    
+            
+    }
+    
 }

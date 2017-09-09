@@ -28,6 +28,26 @@ class AppController extends Controller
                 'Crud.Search'        //
                 ]  
             ]);
+        
+        $this->loadComponent('Auth', [  //carrega o AUTH
+            'storage' => 'Memory',      //armazena os dados em memoria ja que api nao tem sessao 
+            'authenticate' => [         //valida os campos passados pelo form
+                'Form' => [
+                    'scope' => ['Users.active' => 1],
+                ],
+                'ADmad/JwtAuth.Jwt' => [                //configuracoes da api jwt
+                    'parameter' => 'token',
+                    'userModel' => 'Users',
+                    'scope' => ['Users.active' => 1],
+                    'fields' => [
+                        'username' => 'id'
+                    ],
+                    'queryDatasource' => true
+                ]
+            ],
+            'unauthorizedRedirect' => false,
+            'checkAuthIn' => 'Controller.initialize'
+        ]);
     }
     
 }

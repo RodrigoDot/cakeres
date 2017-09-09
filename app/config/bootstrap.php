@@ -218,3 +218,4 @@ if (Configure::read('debug')) {
 Plugin::load('TwitterBootstrap');
 Plugin::load('Crud');
 Plugin::load('Search');
+Plugin::load('ADmad/JwtAuth');
