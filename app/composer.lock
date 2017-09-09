@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd976c5ead6884e05bbe6bdc8bea87cb",
+    "content-hash": "eccd996b3d94fb7a9f03567051f55ef6",
     "packages": [
         {
             "name": "aura/intl",
@@ -393,6 +393,71 @@
                 "update"
             ],
             "time": "2017-08-30T18:37:42+00:00"
+        },
+        {
+            "name": "friendsofcake/crud-json-api",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfCake/crud-json-api.git",
+                "reference": "6214726688477ddad554703789ec3e60613533f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfCake/crud-json-api/zipball/6214726688477ddad554703789ec3e60613533f3",
+                "reference": "6214726688477ddad554703789ec3e60613533f3",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^3.2.2",
+                "friendsofcake/crud": "*",
+                "neomerx/json-api": "^1.0"
+            },
+            "require-dev": {
+                "friendsofcake/cakephp-test-utilities": "dev-master",
+                "friendsofcake/search": "dev-master",
+                "phpunit/phpunit": "<6.0"
+            },
+            "suggest": {
+                "friendsofcake/search": "Provides search capabilities for the Crud plugin."
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "CrudJsonApi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bravo-Kernel",
+                    "homepage": "http://github.com/bravo-kernel",
+                    "role": "Author"
+                },
+                {
+                    "name": "Marlin Cremers",
+                    "homepage": "https://github.com/Marlinc",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Walther Lalk",
+                    "homepage": "https://github.com/dakota",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Listener for building CakePHP Crud APIs following the JSON API specification.",
+            "homepage": "https://github.com/FriendsOfCake/crud-json-api",
+            "keywords": [
+                "api",
+                "cakephp",
+                "crud",
+                "json api",
+                "jsonapi"
+            ],
+            "time": "2017-05-05T14:12:21+00:00"
         },
         {
             "name": "friendsofcake/search",

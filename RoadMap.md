@@ -152,10 +152,12 @@ class ExampleController extends AppController {
 --- 
 
 - use a json pattern 
-- run ``composer require neomerx/json- api``
+- run ``composer require friendsofcake/crud-json-api``
 - go to ``src/controller/api/v1/appcontroller``
 - and change the follow line 
-- ``'Crud.Api'`` by this ``'Crud.JsonApi'``
+- ``'Crud.Api'`` by this ``'CrudJsonApi.JsonApi'``
+- ``'Crud.ApiPagnation'`` by this ``'CrudJsonApi.Pagination'``
+
 
     
 
