@@ -5,22 +5,22 @@ First
 --- 
 
 ## import the cakephp skeleton
-- run composer create-project --prefer-dist cakephp\app NOMEDOPROJETO
+- run ``composer create-project --prefer-dist cakephp\app NOMEDOPROJETO``
 
 --- 
 Second
 --- 
 
 ## Create the migrations tables
-- go to src/app
-- run bin\cake bake migration CreateNOMEDATABELA
+- go to ``src/app``
+- run ``bin\cake bake migration CreateNOMEDATABELA``
  
 --- 
 third
 --- 
 
 ## Edit the tables, after that 
-- run bin\cake migrations migrate
+- run ``bin\cake migrations migrate``
 - Now you have the database
 
 --- 
@@ -173,7 +173,7 @@ class ExampleController extends AppController {
 ## #including the jwt plugin
 - run ``composer require admad/cakephp-jwt-auth``
 ## #activate the puglin, add it to the bootstrap.php 
-- go to src/config/bootstrap.php
+- go to ``src/config/bootstrap.php``
 - add ``Plugin::load('ADmad/JwtAuth');`` or
 - run ``bin\cake plugin load ADmad/JwtAuth`` 
 
