@@ -2,7 +2,7 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
-use cake\Auth\DefaultPasswordHasher;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * User Entity

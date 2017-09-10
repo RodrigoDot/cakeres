@@ -22,7 +22,7 @@ class AppController extends Controller
                 'Crud.Delete'  
             ],
             'listeners' => [ 
-                'Crud.Api',             // carregamento da api
+                'CrudJsonApi.JsonApi',             // carregamento da api
                 'CrudJsonApi.Pagination',   // componente da api para paginar os dados
                 'Crud.ApiQueryLog',     //    
                 'Crud.Search'        //

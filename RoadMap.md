@@ -204,16 +204,48 @@ $this->loadComponent('Auth', [
 18th
 ---
 
+##to register a new user
+- you have to do a POST request to users with the follow data on the header
+    - key = action, value = application/vnd.api+json
+    - key = Content-Type, value = application/vnd.api+json
+- and the follow data on the body
+```
+    {
+    "username" : "Rodrigo110",
+    "password" : "123",
+    "active" : true    
+    } 
+```
+
+---
+19th
+---
+
+##to get a token
+- you have to do a POST request to users/token with the follow data on the header
+    - key = action, value = application/vnd.api+json
+    - key = Content-Type, value = application/vnd.api+json
+- and the follow data on the body
+```
+    {
+    "username" : "Rodrigo110",
+    "password" : "123"
+    }
+```
+    
+
+---
+20th
+---
+
 ##configurate the new routes
 - go to ``src/config/routes.php``
 - add the routes that you need
 - to make requests you will have to pass on the header
-    -  key = action, value = application/vnd.api+json
-    -  key = Content-Type, value = application/vnd.api+json
-
-
-
-
+    - key = action, value = application/vnd.api+json
+    - key = Content-Type, value = application/vnd.api+json
+    - key = authorization, value = Bearer TokenDoUsuario 
+    
 
 
 
