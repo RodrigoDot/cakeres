@@ -125,7 +125,7 @@ class ExampleController extends AppController {
 13th
 --- 
 
-## Activate the component SEARCH of the Crud plugin you need import another plugin
+## To activate the component SEARCH of the Crud plugin you need import another plugin
 - run ``composer require friendsofcake/search``
 - after download the plugin
 - run ``bin\cake plugin load Search``
@@ -136,8 +136,8 @@ class ExampleController extends AppController {
 - configurate the search plugin
 - go to ``src/model/YOURMODEL`` and add
 ```php
-- $this- >searchManager()
-    - >add('search', 'Search.Like', [ //o primeiro parametro SEARCH pode ser nomeado como quiser e eh usado na url
+$this->searchManager()
+    ->add('search', 'Search.Like', [ //o primeiro parametro SEARCH pode ser nomeado como quiser e eh usado na url
         'before' => true,
         'after' => true,
         'fieldMode' => 'OR',
@@ -158,7 +158,7 @@ class ExampleController extends AppController {
 - go to ``src/controller/api/v1/appcontroller``
 - and change the follow line 
 - ``'Crud.Api'`` by this ``'CrudJsonApi.JsonApi'``
-- ``'Crud.ApiPagnation'`` by this ``'CrudJsonApi.Pagination'``
+- ``'Crud.ApiPagination'`` by this ``'CrudJsonApi.Pagination'``
 
 ---
 15th
@@ -204,6 +204,14 @@ $this->loadComponent('Auth', [
 ```        
 
 ---
+20th
+---
+
+## Configurate the new routes
+- go to ``src/config/routes.php``
+- add the routes that you need 
+
+---
 18th
 ---
 
@@ -235,20 +243,17 @@ $this->loadComponent('Auth', [
     "password" : "123"
     }
 ```
-    
-
+        
 ---
 20th
 ---
-
-## Configurate the new routes
-- go to ``src/config/routes.php``
-- add the routes that you need
+   
+## How to do requests
 - to make requests you will have to pass on the header
     - key = action, value = application/vnd.api+json
     - key = Content-Type, value = application/vnd.api+json
-    - key = authorization, value = Bearer TokenDoUsuario 
-    
+    - key = authorization, value = Bearer TokenDoUsuario
+   
 ---
 21th
 ---
