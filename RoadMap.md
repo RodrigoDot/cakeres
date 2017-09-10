@@ -91,7 +91,9 @@ third
 --- 
 
 ## Integrate the new plugin to your API
-- go to ```src/controller/api/v1/appcontroller inside the initialize() add $this- >loadComponent('Crud.Crud', [
+- go to ``src/controller/api/v1/appcontroller`` inside the initialize() add 
+```php
+$this- >loadComponent('Crud.Crud', [
     'action' => [       // controllers que utilizarao o plugin
         "Crud.index"  
     ],
@@ -101,7 +103,8 @@ third
         'Crud.ApiQueryLog',     // componente para debug nos eventos do banco   
         'Crud.Search'        // esse componente soh funciona apos integrar outro plugin
     ]  
-]);```
+]);
+```
 - you have to include your controllers folowing the template above 
 
 --- 
@@ -111,7 +114,7 @@ third
 ## Now you can use the plugin resources on the controllers of your class
 - first you have to declare the plugin inside the class of your conotroller
 - on your controller add ``use \Crud\Controller\ControllerTrait;``
-```
+```php
 class ExampleController extends AppController {
     use \Crud\Controller\ControllerTrait; 
 } 
@@ -132,7 +135,7 @@ class ExampleController extends AppController {
 
 - configurate the search plugin
 - go to ``src/model/YOURMODEL`` and add
-```
+```php
 - $this- >searchManager()
     - >add('search', 'Search.Like', [ //o primeiro parametro SEARCH pode ser nomeado como quiser e eh usado na url
         'before' => true,
@@ -183,7 +186,7 @@ class ExampleController extends AppController {
 
 ## Configurate the api appcontroller
 - add the follow code to the initialize method
-```
+```php
 $this->loadComponent('Auth', [
     'storage' => 'Memory',
     'authenticate' => [
@@ -209,7 +212,7 @@ $this->loadComponent('Auth', [
     - key = action, value = application/vnd.api+json
     - key = Content-Type, value = application/vnd.api+json
 - and the follow data on the body
-```
+```php
     {
     "username" : "Rodrigo110",
     "password" : "123",
@@ -226,7 +229,7 @@ $this->loadComponent('Auth', [
     - key = action, value = application/vnd.api+json
     - key = Content-Type, value = application/vnd.api+json
 - and the follow data on the body
-```
+```php
     {
     "username" : "Rodrigo110",
     "password" : "123"
