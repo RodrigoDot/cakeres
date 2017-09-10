@@ -204,7 +204,7 @@ $this->loadComponent('Auth', [
 ```        
 
 ---
-20th
+18th
 ---
 
 ## Configurate the new routes
@@ -212,7 +212,7 @@ $this->loadComponent('Auth', [
 - add the routes that you need 
 
 ---
-18th
+19th
 ---
 
 ## Registering a new user
@@ -229,7 +229,7 @@ $this->loadComponent('Auth', [
 ```
 
 ---
-19th
+20th
 ---
 
 ## Getting a token
@@ -245,7 +245,7 @@ $this->loadComponent('Auth', [
 ```
         
 ---
-20th
+21th
 ---
    
 ## How to do requests
@@ -255,7 +255,7 @@ $this->loadComponent('Auth', [
     - key = authorization, value = Bearer TokenDoUsuario
    
 ---
-21th
+22th
 ---
 
 ## Fix cors problem
