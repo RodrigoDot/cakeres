@@ -4,7 +4,7 @@
 First
 --- 
 
-## import the cakephp skeleton
+## Import the cakephp skeleton
 - run ``composer create-project --prefer-dist cakephp\app NOMEDOPROJETO``
 
 --- 
@@ -30,17 +30,17 @@ third
 ## Import a theme
 - import the theme on the root directory of the project
 - ``composer require cakephp-brasil/twitter-bootstrap:dev-master``
-- go to ``config\bootstrap.php and add Plugin::load('TwitterBootstrap');`` at the end os the file
-- go to ``src\view\appview.php and add $this->LoadHelper('Form', ['className'=>'TwitterBootstrap.Form']);`` on the initialize method
-- go to ``src\controller\appcontroller.php and add $this->viewBuilder()->theme('TwitterBootstrap');``  on the initialize method
-- go to ``src\controller\appcontroller.php and add $this->viewBuilder()->layout('adminlte');`` on the initialize method
+- go to ``config\bootstrap.php`` and add ``Plugin::load('TwitterBootstrap');`` at the end os the file
+- go to ``src\view\appview.php`` and add ``$this->LoadHelper('Form', ['className'=>'TwitterBootstrap.Form']);`` on the initialize method
+- go to ``src\controller\appcontroller.php`` and add ``$this->viewBuilder()->theme('TwitterBootstrap');``  on the initialize method
+- go to ``src\controller\appcontroller.php`` and add ``$this->viewBuilder()->layout('adminlte');`` on the initialize method
 
 
 --- 
 5th thing to do 
 --- 
 
-## ativate the layout
+## Ativate the layout
 - run this on console ``bin\cake twitter_bootstrap.publish all``
 - now we have the layout files at ``src\template\element``
 - run ``bin\cake bake all NOMEDATABELA --theme TwitterBootstrap``
@@ -49,14 +49,14 @@ third
 6th
 --- 
 
-## create the seeds
+## Create the seeds
 - run ``bin\cake bake seed NOMEDATABELA``
 
 --- 
 7th
 --- 
 
-## personalize the seeds 
+## Personalize the seeds 
 - after you have your seed up with data
 - run ``bin\cake migrations seed``
 - now you have your test data in your database
@@ -65,7 +65,7 @@ third
 8th
 --- 
 
-## create your API
+## Create your API
 - after create your controllers, you must create the routes to access them
 - go to ``config/routes.php`` and add the routes that you need
 
@@ -73,13 +73,13 @@ third
 9th
 --- 
 
-## now you can develop your views and that's it
+## Now you can develop your views and that's it
 
 --- 
 10th
 --- 
 
-## how to install a CRUD package from outside
+## How to install a CRUD package from outside
 - example: ``composer require friendsofcake/crud``
 - to load the plugin o can 
 - run ``bin\cake plugin load NOMEDOPLUGIN`` 
@@ -90,7 +90,7 @@ third
 11th
 --- 
 
-## integrate the new plugin to your API
+## Integrate the new plugin to your API
 - go to ```src/controller/api/v1/appcontroller inside the initialize() add $this- >loadComponent('Crud.Crud', [
     'action' => [       // controllers que utilizarao o plugin
         "Crud.index"  
@@ -108,7 +108,7 @@ third
 12th
 --- 
 
-## now you can use the plugin resources on the controllers of your class
+## Now you can use the plugin resources on the controllers of your class
 - first you have to declare the plugin inside the class of your conotroller
 - on your controller add ``use \Crud\Controller\ControllerTrait;``
 ```
@@ -122,7 +122,7 @@ class ExampleController extends AppController {
 13th
 --- 
 
-## activate the component SEARCH of the Crud plugin you need import another plugin
+## Activate the component SEARCH of the Crud plugin you need import another plugin
 - run ``composer require friendsofcake/search``
 - after download the plugin
 - run ``bin\cake plugin load Search``
@@ -150,7 +150,7 @@ class ExampleController extends AppController {
 14th
 --- 
 
-## use a json pattern 
+## Use a json pattern 
 - run ``composer require friendsofcake/crud-json-api``
 - go to ``src/controller/api/v1/appcontroller``
 - and change the follow line 
@@ -169,10 +169,10 @@ class ExampleController extends AppController {
 16th
 ---
 
-## defining the authentication
-## #including the jwt plugin
+## Defining the authentication
+### Including the jwt plugin
 - run ``composer require admad/cakephp-jwt-auth``
-## #activate the puglin, add it to the bootstrap.php 
+### Activate the puglin, add it to the bootstrap.php 
 - go to ``src/config/bootstrap.php``
 - add ``Plugin::load('ADmad/JwtAuth');`` or
 - run ``bin\cake plugin load ADmad/JwtAuth`` 
@@ -181,7 +181,7 @@ class ExampleController extends AppController {
 17th
 ---
 
-## configurate the api appcontroller
+## Configurate the api appcontroller
 - add the follow code to the initialize method
 ```
 $this->loadComponent('Auth', [
@@ -204,7 +204,7 @@ $this->loadComponent('Auth', [
 18th
 ---
 
-## to register a new user
+## Registering a new user
 - you have to do a POST request to users with the follow data on the header
     - key = action, value = application/vnd.api+json
     - key = Content-Type, value = application/vnd.api+json
@@ -221,7 +221,7 @@ $this->loadComponent('Auth', [
 19th
 ---
 
-## to get a token
+## Getting a token
 - you have to do a POST request to users/token with the follow data on the header
     - key = action, value = application/vnd.api+json
     - key = Content-Type, value = application/vnd.api+json
@@ -238,7 +238,7 @@ $this->loadComponent('Auth', [
 20th
 ---
 
-## configurate the new routes
+## Configurate the new routes
 - go to ``src/config/routes.php``
 - add the routes that you need
 - to make requests you will have to pass on the header
@@ -250,7 +250,7 @@ $this->loadComponent('Auth', [
 21th
 ---
 
-## fix cors problem
+## Fix cors problem
 - run ``composer require ozee31/cakephp-cors``
 - run ``bin\cake plugin load Cors --bootstrap``
     - the second parameter '--bootstrap' is passed to set the lugin as true on the bootstrap.php file
