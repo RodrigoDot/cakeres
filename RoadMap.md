@@ -5,7 +5,7 @@ First
 --- 
 
 ## import the cakephp skeleton
-- run composer create- project - - prefer- dist cakephp\app NOMEDOPROJETO
+- run composer create-project --prefer-dist cakephp\app NOMEDOPROJETO
 
 --- 
 Second
@@ -29,11 +29,11 @@ third
 
 ## Import a theme
 - import the theme on the root directory of the project
-- ``composer require cakephp- brasil/twitter- bootstrap:dev- master``
+- ``composer require cakephp-brasil/twitter-bootstrap:dev-master``
 - go to ``config\bootstrap.php and add Plugin::load('TwitterBootstrap');`` at the end os the file
-- go to ``src\view\appview.php and add $this- >LoadHelper('Form', ['className'=>'TwitterBootstrap.Form']);`` on the initialize method
-- go to ``src\controller\appcontroller.php and add $this- >viewBuilder()- >theme('TwitterBootstrap');``  on the initialize method
-- go to ``src\controller\appcontroller.php and add $this- >viewBuilder()- >layout('adminlte');`` on the initialize method
+- go to ``src\view\appview.php and add $this->LoadHelper('Form', ['className'=>'TwitterBootstrap.Form']);`` on the initialize method
+- go to ``src\controller\appcontroller.php and add $this->viewBuilder()->theme('TwitterBootstrap');``  on the initialize method
+- go to ``src\controller\appcontroller.php and add $this->viewBuilder()->layout('adminlte');`` on the initialize method
 
 
 --- 
@@ -43,7 +43,7 @@ third
 ## ativate the layout
 - run this on console ``bin\cake twitter_bootstrap.publish all``
 - now we have the layout files at ``src\template\element``
-- run ``bin\cake bake all NOMEDATABELA - - theme TwitterBootstrap``
+- run ``bin\cake bake all NOMEDATABELA --theme TwitterBootstrap``
 
 --- 
 6th
@@ -92,10 +92,10 @@ third
 
 ## integrate the new plugin to your API
 - go to ```src/controller/api/v1/appcontroller inside the initialize() add $this- >loadComponent('Crud.Crud', [
-    'action' =- [       // controllers que utilizarao o plugin
+    'action' => [       // controllers que utilizarao o plugin
         "Crud.index"  
     ],
-    'listeners' =- [ 
+    'listeners' => [ 
         "Crud.Api",             // carregamento da api
         'Crud.ApiPagination',   // componente da api para paginar os dados
         'Crud.ApiQueryLog',     // componente para debug nos eventos do banco   
@@ -128,20 +128,20 @@ class ExampleController extends AppController {
 - run ``bin\cake plugin load Search``
 - now you can use the search component 
 - to activate it you must go to ``src/model/YOURMODEL``
-- and add ``$this- >addBehavior('Search.Search');`` in the initialize method
+- and add ``$this->addBehavior('Search.Search');`` in the initialize method
 
 - configurate the search plugin
 - go to ``src/model/YOURMODEL`` and add
 ```
 - $this- >searchManager()
     - >add('search', 'Search.Like', [ //o primeiro parametro SEARCH pode ser nomeado como quiser e eh usado na url
-        'before' =- true,
-        'after' =- true,
-        'fieldMode' =- 'OR',
-        'comparisan' =- 'like',
-        'wildcardAny' =- '*',
-        'wildcardOne' =- '?',
-        'field' =- [
+        'before' => true,
+        'after' => true,
+        'fieldMode' => 'OR',
+        'comparisan' => 'like',
+        'wildcardAny' => '*',
+        'wildcardOne' => '?',
+        'field' => [
             'title'
         ]
     ]);
