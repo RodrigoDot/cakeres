@@ -246,7 +246,14 @@ $this->loadComponent('Auth', [
     - key = Content-Type, value = application/vnd.api+json
     - key = authorization, value = Bearer TokenDoUsuario 
     
+---
+21th
+---
 
+##fix cors problem
+- run ``composer require ozee31/cakephp-cors``
+- run ``bin\cake plugin load Cors --bootstrap``
+    - the second parameter '--bootstrap' is passed to set the lugin as true on the bootstrap.php file
 
 
 
