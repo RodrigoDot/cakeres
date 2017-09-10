@@ -28,6 +28,13 @@ class AppController extends Controller
                 'Crud.Search'        //
                 ]  
             ]);
+        /*
+        if($this->request->getParam('contrller') == 'Users') {
+            $this->Crud->addListener('Crud.Api');
+        } else {
+            $this->Crud->addListener('CrudJsonApi.JsonApi');
+        }
+        */
         
         $this->loadComponent('Auth', [  //carrega o AUTH
             'storage' => 'Memory',      //armazena os dados em memoria ja que api nao tem sessao 
