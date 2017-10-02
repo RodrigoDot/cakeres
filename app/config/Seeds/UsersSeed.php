@@ -30,6 +30,18 @@ class UsersSeed extends AbstractSeed
                 'username' => 'Duda',
                 'password' => '123',
                 'active' => 0
+            ],
+            [
+                'id' => 3,
+                'username' => 'Rodrigo3',
+                'password' => '123',
+                'active' => 1
+            ],
+            [
+                'id' => 4,
+                'username' => 'Duda3',
+                'password' => '123',
+                'active' => 0
             ]
         ];
 

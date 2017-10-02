@@ -1,31 +1,31 @@
 # RoadMap Criando um projeto RestFull utilizando CakePhp
 
---- 
+---
 First
---- 
+---
 
 ## Import the cakephp skeleton
 - run ``composer create-project --prefer-dist cakephp\app NOMEDOPROJETO``
 
---- 
+---
 Second
---- 
+---
 
 ## Create the migrations tables
 - go to ``src/app``
 - run ``bin\cake bake migration CreateNOMEDATABELA``
- 
---- 
-third
---- 
 
-## Edit the tables, after that 
+---
+third
+---
+
+## Edit the tables, after that
 - run ``bin\cake migrations migrate``
 - Now you have the database
 
---- 
+---
 4th
---- 
+---
 
 ## Import a theme
 - import the theme on the root directory of the project
@@ -36,68 +36,68 @@ third
 - go to ``src\controller\appcontroller.php`` and add ``$this->viewBuilder()->layout('adminlte');`` on the initialize method
 
 
---- 
-5th thing to do 
---- 
+---
+5th thing to do
+---
 
 ## Ativate the layout
 - run this on console ``bin\cake twitter_bootstrap.publish all``
 - now we have the layout files at ``src\template\element``
 - run ``bin\cake bake all NOMEDATABELA --theme TwitterBootstrap``
 
---- 
+---
 6th
---- 
+---
 
 ## Create the seeds
 - run ``bin\cake bake seed NOMEDATABELA``
 
---- 
+---
 7th
---- 
+---
 
-## Personalize the seeds 
+## Personalize the seeds
 - after you have your seed up with data
 - run ``bin\cake migrations seed``
 - now you have your test data in your database
 
---- 
+---
 8th
---- 
+---
 
 ## Create your API
 - after create your controllers, you must create the routes to access them
 - go to ``config/routes.php`` and add the routes that you need
 
---- 
+---
 9th
---- 
+---
 
 ## Now you can develop your views and that's it
 
---- 
+---
 10th
---- 
+---
 
 ## How to install a CRUD package from outside
 - example: ``composer require friendsofcake/crud``
-- to load the plugin o can 
-- run ``bin\cake plugin load NOMEDOPLUGIN`` 
+- to load the plugin o can
+- run ``bin\cake plugin load NOMEDOPLUGIN``
 - or
 - go to ``src/config/bootstrap.php and add Plugin::load('NOMEDOPLUGIN');`` at the end of the file
 
---- 
+---
 11th
---- 
+---
 
 ## Integrate the new plugin to your API
-- go to ``src/controller/api/v1/appcontroller`` inside the initialize() add 
+- go to ``src/controller/api/v1/appcontroller`` inside the initialize() add
 ```php
 $this- >loadComponent('Crud.Crud', [
     'action' => [       // controllers que utilizarao o plugin
         "Crud.index"  
     ],
-    'listeners' => [ 
+    'listeners' => [
         "Crud.Api",             // carregamento da api
         'Crud.ApiPagination',   // componente da api para paginar os dados
         'Crud.ApiQueryLog',     // componente para debug nos eventos do banco   
@@ -105,31 +105,31 @@ $this- >loadComponent('Crud.Crud', [
     ]  
 ]);
 ```
-- you have to include your controllers folowing the template above 
+- you have to include your controllers folowing the template above
 
---- 
+---
 12th
---- 
+---
 
 ## Now you can use the plugin resources on the controllers of your class
 - first you have to declare the plugin inside the class of your conotroller
 - on your controller add ``use \Crud\Controller\ControllerTrait;``
 ```php
 class ExampleController extends AppController {
-    use \Crud\Controller\ControllerTrait; 
-} 
+    use \Crud\Controller\ControllerTrait;
+}
 ```
 - now you can access all the methods from the Crud plugin
 
---- 
+---
 13th
---- 
+---
 
 ## To activate the component SEARCH of the Crud plugin you need import another plugin
 - run ``composer require friendsofcake/search``
 - after download the plugin
 - run ``bin\cake plugin load Search``
-- now you can use the search component 
+- now you can use the search component
 - to activate it you must go to ``src/model/YOURMODEL``
 - and add ``$this->addBehavior('Search.Search');`` in the initialize method
 
@@ -149,14 +149,14 @@ $this->searchManager()
         ]
     ]);
 ```    
---- 
+---
 14th
---- 
+---
 
-## Use a json pattern 
+## Use a json pattern
 - run ``composer require friendsofcake/crud-json-api``
 - go to ``src/controller/api/v1/appcontroller``
-- and change the follow line 
+- and change the follow line
 - ``'Crud.Api'`` by this ``'CrudJsonApi.JsonApi'``
 - ``'Crud.ApiPagination'`` by this ``'CrudJsonApi.Pagination'``
 
@@ -175,10 +175,10 @@ $this->searchManager()
 ## Defining the authentication
 ### Including the jwt plugin
 - run ``composer require admad/cakephp-jwt-auth``
-### Activate the puglin, add it to the bootstrap.php 
+### Activate the puglin, add it to the bootstrap.php
 - go to ``src/config/bootstrap.php``
 - add ``Plugin::load('ADmad/JwtAuth');`` or
-- run ``bin\cake plugin load ADmad/JwtAuth`` 
+- run ``bin\cake plugin load ADmad/JwtAuth``
 
 ---
 17th
@@ -209,7 +209,7 @@ $this->loadComponent('Auth', [
 
 ## Configurate the new routes
 - go to ``src/config/routes.php``
-- add the routes that you need 
+- add the routes that you need
 
 ---
 19th
@@ -225,7 +225,7 @@ $this->loadComponent('Auth', [
     "username" : "Rodrigo110",
     "password" : "123",
     "active" : true    
-    } 
+    }
 ```
 
 ---
@@ -233,6 +233,7 @@ $this->loadComponent('Auth', [
 ---
 
 ## Getting a token
+- do a post to ``http://localhost:8765/api/v1/users/token.json``
 - you have to do a POST request to users/token with the follow data on the header
     - key = action, value = application/vnd.api+json
     - key = Content-Type, value = application/vnd.api+json
@@ -243,17 +244,18 @@ $this->loadComponent('Auth', [
     "password" : "123"
     }
 ```
-        
+
 ---
 21th
 ---
-   
+
 ## How to do requests
+- do a request to ``http://localhost:8765/api/v1/properties``
 - to make requests you will have to pass on the header
     - key = action, value = application/vnd.api+json
     - key = Content-Type, value = application/vnd.api+json
     - key = authorization, value = Bearer TokenDoUsuario
-   
+
 ---
 22th
 ---
@@ -262,23 +264,3 @@ $this->loadComponent('Auth', [
 - run ``composer require ozee31/cakephp-cors``
 - run ``bin\cake plugin load Cors --bootstrap``
     - the second parameter '--bootstrap' is passed to set the lugin as true on the bootstrap.php file
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

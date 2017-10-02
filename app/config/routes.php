@@ -75,21 +75,21 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->fallbacks(DashedRoute::class);
 });
 
-// ROTAS PERSONALIZADAS DA API 
+// ROTAS PERSONALIZADAS DA API
 
 Router::prefix('api/v1', function(RouteBuilder $routes) { //define o prefixo da url
-    
+
     //ROTAS PARA A API
     $routes->extensions(['json']);          // habilita requisicoes json
     $routes->resources('Properties');       // habilita requisicoes vindas do controller properties
     $routes->resources('PropertiesTypes');       // habilita requisicoes vindas do controller properties
     $routes->resources('Districts');       // habilita requisicoes vindas do controller districts
     $routes->resources('Users');       // habilita requisicoes vindas do controller users
-    
+
     //ROTAS PARA A API VIA JWT
-    Router::connect('/api/v1/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api/v1']); //registra um usuario via api (POST) 
+    Router::connect('/api/v1/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api/v1']); //registra um usuario via api (POST)
     Router::connect('/api/v1/users/token', ['controller' => 'Users', 'action' => 'token', 'prefix' => 'api/v1']); //atribui um token ao usuario (POST)
-    
+
     $routes->fallbacks(DashedRoute::class);
 });
 
